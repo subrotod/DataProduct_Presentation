@@ -1,0 +1,66 @@
+---
+title       : Interactive classification of Iris Species
+subtitle    : Using tree based algorithms
+author      : Subroto Datta
+job         : Coursera Data Products
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : standalone # {selfcontained, standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Interactive application of Predicting Iris species
+
+1. Used to classify one of three Iris plant species setosa, virginica, versiflower.
+2. Based on flower sepal and petal measurements in centimeters
+3. Provides a choice of two classification models.
+4. Models were trained against Ronald Fisher's <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">iris flower dataset</a> available in base R.
+5. User enters 4 measurements and receives a prediction.
+
+<br>
+<br>
+
+The two classification models are based on the following algorithms
+
+1. <b> randomForest </b> which is a tree based predictor based on bootstrapped aggregation.
+2. <b> rpart </b> Regression Partitioning and Decision Tree
+
+
+Description for using these two algorithms with R are available <a href="http://www.statmethods.net/advstats/cart.html">here.</a>
+
+
+
+--- .class #id 
+
+## Descriptive statistics : Iris Data Set 
+
+```{r, echo=FALSE}
+data(iris)
+head(iris, 1)
+summary(iris)
+```
+
+--- .class #id 
+
+## Pairs Plot : Iris Data Set 
+```{r, echo=FALSE}
+pairs(iris[1:4], main = "Iris Data", pch = 21, bg = c("red", "green3", "blue")[unclass(iris$Species)]) 
+```
+
+--- .class #id 
+
+## Usage
+
+1. The application is available <a href="https://subrotod.shinyapps.io/DDProject">here.</a>
+2. The data is entered in <b>cms </b> in the left panel.
+3. <b>Important </b> Press the Go! button to obtain the predictions on the input data.
+4. The prediction is available in the Result panel. The two algorithms may give different predictions in some cases.
+5. Refer to the Help panel for sample data.
+
+
+
+
+
+
